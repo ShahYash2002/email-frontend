@@ -1,7 +1,6 @@
 <script>
 import AppNavbar from "./components/AppNavbar.vue";
 import AppSidebar from "./components/AppSidebar.vue";
-import sidebarItems from "./assets/sidebarItems.json";
 import userApi from "./services/userApi";
 export default {
   data() {
