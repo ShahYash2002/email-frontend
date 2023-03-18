@@ -1,7 +1,5 @@
 <template>
-  <div class="text-3xl font-bold text-center ml-auto mr-auto">
-    Your Dashboard
-  </div>
+  <div class="text-xl font-bold">Dashboard</div>
 </template>
 
 <script>

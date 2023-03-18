@@ -42,32 +42,65 @@
     </div>
   </div>
   <template v-else>
-    <div class="grid grid-cols-1 gap-4" v-if="messages.length == 0">
+    <div class="grid grid-cols-1 gap-4" v-if="!message">
       <div class="bg-red-50 p-4 rounded-lg shadow-sm">
         <p class="text-red-700 font-semibold">No emails yet</p>
       </div>
     </div>
-    <div class="grid grid-cols-1 gap-4 mb-4" v-for="message in messages">
+    <div class="grid grid-cols-1 gap-4 mb-4">
       <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
         <div class="flex items-center justify-between">
-          <router-link
-            :to="{
-              name: 'message-details',
-              params: { id, msg_id: message.id },
-            }"
-          >
-            <span class="font-bold">{{ message.subject }}</span>
-          </router-link>
-
+          <span class="font-bold">{{ message.subject }}</span>
           <span class="text-gray-700">{{ message.createdAt }}</span>
         </div>
-        <p class="text-gray-500 my-1 text-sm">
+        <p class="text-gray-500 my-2 text-sm">
           <span class="font-semibold mr-2">From:</span
           >{{ message.from.address }}
         </p>
-        <p class="text-gray-700 bg-white rounded-md p-4">
-          {{ message.intro }}
+        <p class="text-gray-500 my-2 text-sm">
+          <span class="font-semibold mr-2">CC:</span>
+          <span class="mr-2" v-for="cc in message.cc">
+            {{ cc.address }}
+          </span>
         </p>
+        <p class="text-gray-500 my-2 text-sm">
+          <span class="font-semibold mr-2">BCC:</span>
+          <span class="mr-2" v-for="bcc in message.bcc">
+            {{ bcc.address }}
+          </span>
+        </p>
+        <div class="text-gray-500 my-2 text-sm">
+          <span class="font-semibold mr-2">Attachments:</span>
+
+          <ul class="flex flex-start justify-start gap-4">
+            <li v-for="attachment in message.attachments">
+              <p
+                class="flex items-center gap-1 my-1 text-primary-700"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                  />
+                </svg>
+                {{ attachment.filename }}
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="container whitespace-wrap">
+          <template v-for="html in message.html">
+            <p class="text-gray-700 bg-white rounded-md p-4 mb-4 overflow-scroll" v-html="html"></p>
+          </template>
+        </div>
       </div>
     </div>
   </template>
@@ -76,10 +109,10 @@
 <script>
 import clientApi from "../services/clientApi";
 export default {
-  props: ["id"],
+  props: ["id", "msg_id"],
   data() {
     return {
-      messages: [],
+      message: {},
       loading: true,
     };
   },
@@ -89,9 +122,9 @@ export default {
   methods: {
     fetchData: function () {
       clientApi
-        .getClientById(this.id)
+        .getClientMessageById(this.id, this.msg_id)
         .then((result) => {
-          this.messages = result.data["hydra:member"];
+          this.message = result.data;
           this.loading = false;
         })
         .catch((err) => {

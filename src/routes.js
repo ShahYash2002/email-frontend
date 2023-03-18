@@ -3,6 +3,7 @@ import ForgotPassword from "./views/ForgotPassword.vue";
 import Home from "./views/Home.vue";
 import Client from "./views/Client.vue";
 import Messages from "./views/Messages.vue";
+import MessageDetails from "./views/MessageDetails.vue";
 import Settings from "./views/Settings.vue";
 export default [
   {
@@ -30,6 +31,12 @@ export default [
     path: "/client/:id(\\d+)/messages",
     component: Messages,
     name: "client-messages",
+    props: true,
+  },
+  {
+    path: "/client/:id(\\d+)/message/:msg_id",
+    component: MessageDetails,
+    name: "message-details",
     props: true,
   },
   {
