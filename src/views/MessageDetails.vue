@@ -128,7 +128,7 @@ export default {
           this.loading = false;
         })
         .catch((err) => {
-          console.log(err.message);
+          // console.log(err.message);
           this.loading = false;
         });
     },

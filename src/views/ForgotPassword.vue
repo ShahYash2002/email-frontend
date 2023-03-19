@@ -117,7 +117,7 @@ export default {
         // notify user form is invalid
         return;
       }
-      console.log("submit okay");
+      // console.log("submit okay");
     },
   },
 };

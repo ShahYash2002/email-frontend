@@ -220,7 +220,7 @@ export default {
           this.loading = false;
         })
         .catch((err) => {
-          console.log(err.message);
+          // console.log(err.message);
           this.loading = false;
         });
     },
@@ -231,7 +231,7 @@ export default {
   computed: {
     filteredClients: function () {
       return this.clients.filter((client) => {
-        // console.log();
+        // // console.log();
         return client.email.match(this.searchText);
       });
     },

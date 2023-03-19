@@ -190,19 +190,19 @@ export default {
       if (!result) {
         return;
       }
-      console.log("submit okay");
+      // console.log("submit okay");
 
       this.isValidating = true;
       userApi
         .signin(this.email, this.password)
         .then((result) => {
-          console.log(result);
+          // console.log(result);
           localStorage.setItem("token", result.data.token);
           this.$router.replace({ name: "home" });
           this.isValidating = false;
         })
         .catch((err) => {
-          console.log(err.message);
+          // console.log(err.message);
           this.error = true;
           this.errorMessage = "Invalid Credentials";
           this.isValidating = false;

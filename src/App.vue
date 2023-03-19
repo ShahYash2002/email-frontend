@@ -25,7 +25,7 @@ export default {
           this.sidebarItems = result.data.sidebarItems;
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
           return this.$router.replace({
             name: "signin",
           });
@@ -38,7 +38,7 @@ export default {
         this.openRoutes.findIndex((route) => route == this.$route.name) === -1;
 
       if (show && this.sidebarItems.length === 0) {
-        console.log("side data fetched");
+        // console.log("side data fetched");
         this.fetchData();
       }
 
