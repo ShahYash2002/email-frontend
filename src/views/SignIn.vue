@@ -78,14 +78,13 @@
             {{ error.$message }}
           </p>
         </div>
-        <div class="flex items-center flex-wrap gap-x-3">
+        <div class="flex items-center flex-wrap gap-3">
           <button
             type="submit"
-            class="w-full px-5 py-3 text-base font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            class="flex items-center gap-2 w-full px-5 py-3 text-base font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
           >
             Login to your account
-          </button>
-          <div role="status" v-if="isValidating">
+            <div role="status" v-if="isValidating">
             <svg
               aria-hidden="true"
               class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -104,6 +103,8 @@
             </svg>
             <span class="sr-only">Loading...</span>
           </div>
+          </button>
+          
 
           <router-link
             :to="{ name: 'forgot-password' }"
