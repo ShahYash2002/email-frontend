@@ -13,6 +13,11 @@ export default {
   },
   methods: {
     fetchData() {
+      if (this.show && !localStorage.token) {
+        return this.$router.replace({
+          name: "signin",
+        });
+      }
       userApi
         .config()
         .then((result) => {
@@ -21,22 +26,23 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-          this.$router.replace({
+          return this.$router.replace({
             name: "signin",
           });
         });
     },
   },
-  beforeMount() {
-    if (this.show) {
-      this.fetchData();
-    }
-  },
   computed: {
     show: function () {
-      return (
-        this.openRoutes.findIndex((route) => route == this.$route.name) === -1
-      );
+      const show =
+        this.openRoutes.findIndex((route) => route == this.$route.name) === -1;
+
+      if (show && this.sidebarItems.length === 0) {
+        console.log("side data fetched");
+        this.fetchData();
+      }
+
+      return show;
     },
   },
   components: {
