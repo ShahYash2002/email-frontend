@@ -80,7 +80,7 @@ export default {
   data() {
     return {
       messages: [],
-      loading: true,
+      loading: false,
     };
   },
   beforeMount() {
@@ -88,6 +88,8 @@ export default {
   },
   methods: {
     fetchData: function () {
+      this.loading = true;
+
       clientApi
         .getClientById(this.id)
         .then((result) => {

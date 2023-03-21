@@ -19,7 +19,7 @@
     </svg>
     Back
   </p>
-  <div class="text-2xl font-bold mb-4">Your Emails</div>
+  <div class="text-2xl font-bold mb-4">{{ message.subject }}</div>
   <div v-if="loading">
     <div role="status">
       <svg
@@ -74,9 +74,7 @@
 
           <ul class="flex flex-start justify-start gap-4">
             <li v-for="attachment in message.attachments">
-              <p
-                class="flex items-center gap-1 my-1 text-primary-700"
-              >
+              <p class="flex items-center gap-1 my-1 text-primary-700">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -98,7 +96,10 @@
         </div>
         <div class="container whitespace-wrap">
           <template v-for="html in message.html">
-            <p class="text-gray-700 bg-white rounded-md p-4 mb-4 overflow-scroll" v-html="html"></p>
+            <p
+              class="text-gray-700 bg-white rounded-md p-4 mb-4 overflow-scroll"
+              v-html="html"
+            ></p>
           </template>
         </div>
       </div>
@@ -113,7 +114,7 @@ export default {
   data() {
     return {
       message: {},
-      loading: true,
+      loading: false,
     };
   },
   beforeMount() {
@@ -121,16 +122,25 @@ export default {
   },
   methods: {
     fetchData: function () {
-      clientApi
-        .getClientMessageById(this.id, this.msg_id)
-        .then((result) => {
-          this.message = result.data;
-          this.loading = false;
-        })
-        .catch((err) => {
-          // console.log(err.message);
-          this.loading = false;
-        });
+      this.loading = true;
+      try {
+        clientApi
+          .getClientMessageById(this.id, this.msg_id)
+          .then((result) => {
+            this.message = result.data;
+            this.loading = false;
+          })
+          .catch((err) => {
+            console.log(err.message);
+            this.message = undefined;
+
+            this.loading = false;
+          });
+      } catch (error) {
+        // this.$router.go(-1);
+        this.message = undefined;
+        this.loading = false;
+      }
     },
   },
   watch: {
