@@ -111,16 +111,16 @@
                     v-for="(client, index) in filteredClients"
                     :key="client.id"
                   >
-                    <td class="p-4 mr-12">
+                    <td class="px-2 py-4 md:p-4 text-center w-10">
                       {{ index + 1 }}
                     </td>
                     <td
-                      class="p-4 mr-12 space-x-6 whitespace-nowrap cursor-default"
+                      class="px-2 py-4 md:p-4 md:mr-12 space-x-6 whitespace-nowrap cursor-default"
                     >
-                      <div class="flex items-start gap-2">
+                      <div class="flex items-center gap-2 flex-wrap  ">
                         <img
-                          class="mb-4 rounded-lg w-15 h-15 sm:mb-0 xl:mb-4 2xl:mb-0"
-                          :src="`https://i.pravatar.cc/50/img=${
+                          class="rounded-lg sm:mb-0 2xl:mb-0  w-10 h-10 "
+                          :src="`https://i.pravatar.cc/500/img=${
                             index + Math.ceil(Math.random() * 100)
                           }`"
                           alt="Jese picture"
@@ -132,7 +132,7 @@
                       </div>
                     </td>
                     <td
-                      class="flex justify-end flex-wrap gap-y-2 p-4 space-x-2 whitespace-nowrap"
+                      class="flex justify-end flex-wrap gap-y-2 px-1 py-4 md:p-4 md:space-x-2 whitespace-nowrap"
                     >
                       <router-link
                         :to="{
@@ -156,7 +156,7 @@
                           />
                         </svg>
 
-                        View Messages
+                        View <span class="hidden md:inline-block">Messages</span>
                       </router-link>
                       <!-- <button
                         type="button"
