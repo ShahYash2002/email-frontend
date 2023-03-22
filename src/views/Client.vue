@@ -13,7 +13,7 @@
         </div>
         <div class="sm:flex">
           <div
-            class="items-center hidden mb-3 sm:flex sm:divide-x sm:divide-gray-100 sm:mb-0 dark:divide-gray-700"
+            class="items-center mb-3 sm:flex sm:divide-x sm:divide-gray-100 sm:mb-0 dark:divide-gray-700"
           >
             <form class="lg:pr-3" action="#" method="GET">
               <label for="users-search" class="sr-only">Search</label>
