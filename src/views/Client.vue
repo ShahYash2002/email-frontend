@@ -27,7 +27,7 @@
               </div>
             </form>
           </div>
-          <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
+          <!-- <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
             <button
               type="button"
               data-modal-toggle="add-user-modal"
@@ -47,7 +47,7 @@
               </svg>
               Add {{ type }}
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -146,7 +146,7 @@
 
                         View Messages
                       </router-link>
-                      <button
+                      <!-- <button
                         type="button"
                         data-modal-toggle="edit-user-modal"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -186,7 +186,7 @@
                           ></path>
                         </svg>
                         Delete user
-                      </button>
+                      </button> -->
                     </td>
                   </tr>
                 </tbody>
