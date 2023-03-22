@@ -117,7 +117,19 @@
                     <td
                       class="p-4 mr-12 space-x-6 whitespace-nowrap cursor-default"
                     >
-                      {{ client.email }}
+                      <div class="flex items-start gap-2">
+                        <img
+                          class="mb-4 rounded-lg w-15 h-15 sm:mb-0 xl:mb-4 2xl:mb-0"
+                          :src="`https://i.pravatar.cc/50/img=${
+                            index + Math.ceil(Math.random() * 100)
+                          }`"
+                          alt="Jese picture"
+                        />
+                        <div class="flex flex-col">
+                          <div>{{ client.email }}</div>
+                          <div>{{ type }}</div>
+                        </div>
+                      </div>
                     </td>
                     <td
                       class="flex justify-end flex-wrap gap-y-2 p-4 space-x-2 whitespace-nowrap"

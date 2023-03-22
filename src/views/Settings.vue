@@ -14,7 +14,7 @@
           >
             <img
               class="mb-4 rounded-lg w-28 h-28 sm:mb-0 xl:mb-4 2xl:mb-0"
-              src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+              src="https://i.pravatar.cc/?img=2"
               alt="Jese picture"
             />
             <div>
@@ -302,7 +302,7 @@
                     <div>
                       <img
                         class="w-6 h-6 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                        src="https://i.pravatar.cc/?img=1"
                         alt="Bonnie image"
                       />
                     </div>
@@ -343,7 +343,7 @@
                     <div>
                       <img
                         class="w-6 h-6 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                        src="https://i.pravatar.cc/?img=3"
                         alt="Jese image"
                       />
                     </div>
@@ -384,7 +384,7 @@
                     <div>
                       <img
                         class="w-6 h-6 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                        src="https://i.pravatar.cc/?img=4"
                         alt="Thomas image"
                       />
                     </div>
@@ -425,7 +425,7 @@
                     <div>
                       <img
                         class="w-6 h-6 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                        src="https://i.pravatar.cc/150"
                         alt="Lana image"
                       />
                     </div>
