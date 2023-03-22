@@ -34,7 +34,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-10 h-10 hidden sm:block"
+              class="w-10 h-10 block"
             >
               <path
                 stroke-linecap="round"
@@ -44,7 +44,7 @@
             </svg>
 
             <div
-              class="font-semibold sm:text-2xl whitespace-nowrap text-3xl dark:text-white"
+              class="font-semibold hidden md:block sm:text-2xl whitespace-nowrap text-3xl dark:text-white"
             >
               MailBox
             </div></router-link
@@ -64,26 +64,41 @@
                 alt="user photo"
               />
 
-              <div class="text-start" role="none">
+              <div class="text-start hidden md:block" role="none">
                 <p
                   class="text-md text-gray-900 font-bold dark:text-white capitalize"
                   role="none"
                 >
                   {{ user.name }}
                 </p>
-
                 <p
                   class="text-xs font-medium text-gray-500 truncate dark:text-gray-300"
                   role="none"
                 >
-                  {{ user.email }}
+                  {{ user.domain }}
                 </p>
+                
               </div>
             </button>
             <div
               class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
               id="dropdown-user"
             >
+            <div class="flex md:hidden flex-col justify-center items-center" role="none">
+                <p
+                  class="text-md text-gray-900 font-bold dark:text-white capitalize"
+                  role="none"
+                >
+                  {{ user.name }}
+                </p>
+                <p
+                  class="text-xs font-medium text-gray-500 truncate dark:text-gray-300"
+                  role="none"
+                >
+                  {{ user.domain }}
+                </p>
+                
+              </div>
               <ul class="py-1" role="none">
                 <!-- <li>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
