@@ -1,11 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://email-backend-api.onrender.com/",
+  baseURL: "http://localhost:3000",
   withCredentials: true,
-  headers: {
-    Origin: "https://my-mailbox.netlify.app/",
-  },
 });
 
 // api.interceptors.request.use((config) => {
