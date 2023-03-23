@@ -13,11 +13,6 @@ export default {
   },
   methods: {
     fetchData() {
-      if (this.show && !localStorage.token) {
-        return this.$router.replace({
-          name: "signin",
-        });
-      }
       userApi
         .config()
         .then((result) => {

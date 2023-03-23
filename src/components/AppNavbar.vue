@@ -171,8 +171,6 @@ export default {
   props: ["user"],
   methods: {
     handleClick: function () {
-      // console.log("signin out");
-      localStorage.removeItem("token");
       this.$router.replace({ name: "signin" });
     },
   },
