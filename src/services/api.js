@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://email-backend-api.onrender.com",
+  baseURL: "https://mailmaster.alwaysdata.net/api",
   withCredentials: true,
 });
 
