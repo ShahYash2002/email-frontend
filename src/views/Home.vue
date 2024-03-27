@@ -1,8 +1,8 @@
 <template>
   <div class="">
-    <div class="text-3xl font-bold text-center py-3 subpixel-antialiased tracking-widest">Dashboard</div>
+    <!-- <div class="text-3xl font-bold text-center py-3 subpixel-antialiased tracking-widest">Dashboard</div> -->
     <!-- <div class="font-semibold py-2">Stats</div> -->
-    <div class="flex flex-wrap justify-center md:justify-around gap-4 mb-8 ">
+    <!-- <div class="flex flex-wrap justify-center md:justify-around gap-4 mb-8 ">
       <div
         role="status"
         class="max-w-sm col-span-1 p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
@@ -109,10 +109,10 @@
         </div>
         <span class="sr-only">Loading...</span>
       </div>
-    </div>
-    <div
+    </div> -->
+    <!-- <div
       class="grid grid-cols-2 gap-6 justify-self-center justify-content-center justify-items-center"
-    ></div>
+    ></div> -->
     <div
       role="status"
       class="space-y-8 mb-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center"
@@ -153,7 +153,7 @@
       <span class="sr-only">Loading...</span>
     </div>
 
-    <div role="status" class="animate-pulse mb-8">
+    <!-- <div role="status" class="animate-pulse mb-8">
       <div
         class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 max-w-[640px] mb-2.5 mx-auto"
       ></div>
@@ -180,7 +180,7 @@
         <div class="w-24 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
       </div>
       <span class="sr-only">Loading...</span>
-    </div>
+    </div> -->
 
     <div
       role="status"

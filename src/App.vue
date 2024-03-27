@@ -5,7 +5,7 @@ import userApi from "./services/userApi";
 export default {
   data() {
     return {
-      openRoutes: ["signin", "forgot-password"],
+      openRoutes: ["signin", "signup", "forgot-password"],
       loaded: false,
       sidebarItems: [],
       user: {},

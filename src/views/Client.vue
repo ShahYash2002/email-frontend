@@ -27,8 +27,9 @@
               </div>
             </form>
           </div>
-          <!-- <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
-            <button
+          <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
+            <router-link
+              :to="{ name: 'add-client', params: { type } }"
               type="button"
               data-modal-toggle="add-user-modal"
               class="inline-flex items-center justify-center capitalize w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -46,8 +47,8 @@
                 ></path>
               </svg>
               Add {{ type }}
-            </button>
-          </div> -->
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -117,17 +118,26 @@
                     <td
                       class="px-2 py-4 md:p-4 md:mr-12 space-x-6 whitespace-nowrap cursor-default"
                     >
-                      <div class="flex items-center gap-2 flex-wrap  ">
-                        <img
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <!-- <img
                           class="rounded-lg sm:mb-0 2xl:mb-0  w-10 h-10 "
                           :src="`https://i.pravatar.cc/500/img=${
                             index + Math.ceil(Math.random() * 100)
                           }`"
                           alt="Jese picture"
-                        />
+                        /> -->
                         <div class="flex flex-col">
-                          <div>{{ client.email }}</div>
-                          <div>{{ type }}</div>
+                          <div>
+                            <router-link
+                              :to="{
+                                name: 'client-messages',
+                                params: { id: client.id },
+                              }"
+                              class="hover:text-blue-800 hover:underline"
+                              >{{ client.email }}
+                            </router-link>
+                          </div>
+                         
                         </div>
                       </div>
                     </td>
@@ -156,7 +166,8 @@
                           />
                         </svg>
 
-                        View <span class="hidden md:inline-block">Messages</span>
+                        View &nbsp;
+                        <span class="hidden md:inline-block">Messages</span>
                       </router-link>
                       <!-- <button
                         type="button"
