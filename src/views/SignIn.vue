@@ -196,8 +196,8 @@ export default {
       userApi
         .signin(this.email, this.password)
         .then((result) => {
-          console.log(result);
-          // localStorage.setItem("token", result.data.token);
+          // console.log(result);
+          localStorage.setItem("token", result.data.token);
           this.$router.replace({ name: "home" });
           this.isValidating = false;
         })

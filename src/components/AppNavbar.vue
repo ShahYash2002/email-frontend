@@ -171,6 +171,7 @@ export default {
   props: ["user"],
   methods: {
     handleClick: function () {
+      localStorage.removeItem("token");
       this.$router.replace({ name: "signin" });
     },
   },
